@@ -3,7 +3,7 @@
 
 # 萌译MoeTranslate
 
-一键翻译图片文字内容，让您和非中文游戏的距离不再遥远；不仅如此，还支持Gemini聊天和Live2D。
+一键翻译图片文字内容，让您和非中文游戏的距离不再遥远。
 
 更多内容请查看下方的官网。
 
@@ -25,7 +25,7 @@
   
 - **直接上传图片进行翻译：** 将截图直接上传给特定API，获取翻译结果，适用于源语言不是中文、日文、英文、韩文的情况。
 
-## 一、翻译功能
+## 翻译功能
 
 翻译是萌译的核心功能，对于上述两种模式，分别支持不同的API，每个API的申请方法在萌译官网中都有[详细的教程](https://www.moetranslate.top/docs/translation/apiconfig/)（视频教程、图文教程）。
 
@@ -90,26 +90,6 @@
 > **腾讯云：** 属于在线翻译API。需要提前配置API Key方可使用。注册后即可享受**每月1万次的图片翻译免费调用次数**，一般用户足够使用。API申请方法稍微复杂一些，由于腾讯云的图片翻译仅支持单行翻译，因此当一句话多于一行时，会造成翻译严重不正确的情况。  
 > [申请教程](https://www.moetranslate.top/docs/translationapi/tencent/)  
 > 翻译质量：★★（2星）
-
-## 二、其他功能
-
-### 1、Live 2D模型查看
-
-<img src="markdown/images/l2d.png"/>
-
-得益于[Live 2D的SDK](https://www.live2d.com/sdk/about/)，萌译支持导入Live 2D模型，并自动解析模型附带的动作和表情，然后用户可选择特定的动作和表情播放，实现随时随地欣赏Live 2D角色。
-
-具体的导入教程和注意事项可[点击此处](https://www.moetranslate.top/docs/live2d/importmodel/)查看。
-
-\*图中的鹿目圆模型来自魔法纪录，在此仅作为预置模型展示软件功能，版权归原作者所有。
-
-### 2、Gemini AI聊天
-
-<img src="markdown/images/gemini.png"/>
-
-Google的Gemini正处于全民公测阶段，而且实际上Gemini模型的实力不俗，刚好其[Gemini-1.5 Flash](https://ai.google.dev/pricing#1_5flash)的API有免费方案可以使用，因此我们可获取API后在萌译中和其进行聊天。值得注意的是中国大陆用户需开启VPN后使用。
-
-具体的使用教程可[点击此处](https://www.moetranslate.top/docs/gemini/apiapplication/)查看。
 
 ## 捐助项目
 

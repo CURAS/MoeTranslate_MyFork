@@ -141,11 +141,6 @@ dependencies {
     // Guava库
     implementation("com.google.guava:guava:33.3.1-android")
 
-    // Live2D的SDK
-    implementation(fileTree(dir: 'libs', include: ['Live2DCubismCore.aar']))
-    // Live2D依赖模块
-    implementation project(path: ':framework')
-
     // room数据库相关组件
     def room_version = "2.6.1"
     // 处理Kotlin注解

@@ -14,12 +14,12 @@ export default defineUserConfig({
     '/': {
       title: '萌译 - MoeTranslate',
       lang: 'zh-CN',
-      description: '一键翻译图片文字内容，让您和非中文游戏的距离不再遥远；不仅如此，还支持Gemini聊天和Live2D。',
+      description: '一键翻译图片文字内容，让您和非中文游戏的距离不再遥远。',
     },
     '/en/': {
       title: 'MoeTranslate',
       lang: 'en-US',
-      description: 'One-click translation of picture text content, so that the distance between you and non-Chinese games is no longer far; Not only that, but Gemini chat and Live2D are also supported.',
+      description: 'One-click translation of picture text content, so that the distance between you and non-Chinese games is no longer far.',
     },
   },
 

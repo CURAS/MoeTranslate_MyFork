@@ -53,14 +53,6 @@ config:
         icon: ♾️
         details: 对于高级用户，也支持使用自定义的API进行翻译，大大提高可玩性
       -
-        title: Live 2D
-        icon: <img src="https://em-content.zobj.net/source/microsoft-3D-fluent/406/girl_1f467.png" width="30" height="30">
-        details: 内置Live 2D的SDK，可以实现导入Live 2D模型，并自动解析模型的表情、动作
-      -
-        title: Gemini聊天
-        icon: twemoji:speech-balloon
-        details: 加入了Gemini聊天功能，填入Key即可实现含有上下文的聊天
-      -
         title: 更多细节
         icon: twemoji:glowing-star
         details: 自定义外观、自定义字体、翻译优化......还有更多细节等你来发现

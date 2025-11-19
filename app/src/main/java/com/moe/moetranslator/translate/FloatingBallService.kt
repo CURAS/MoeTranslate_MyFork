@@ -138,6 +138,7 @@ class FloatingBallService : LifecycleService() {
     // 长按处理器
     private val handler = Handler(Looper.getMainLooper())
     private val longPressRunnable = Runnable { handleLongPress() }
+    private val notlongPressRunnable = Runnable { handlenotLongPress() }
 
     // 当前手势类型
     private var currentGesture: GestureType? = null
@@ -313,6 +314,7 @@ class FloatingBallService : LifecycleService() {
                     floatingBallInitialTouchY = event.rawY
 
                     // 开始长按检测
+                    handler.postDelayed(notlongPressRunnable, 200L)
                     handler.postDelayed(longPressRunnable, floatingBallConfig.LONG_PRESS_DELAY)
                     currentGesture = null
                     true
@@ -325,6 +327,7 @@ class FloatingBallService : LifecycleService() {
                     // 判断总移动距离是否超出长按移动阈值
                     if (totalMoveX > floatingBallConfig.LONG_PRESS_SLOP || totalMoveY > floatingBallConfig.LONG_PRESS_SLOP) {
                         handler.removeCallbacks(longPressRunnable)
+                        handler.removeCallbacks(notlongPressRunnable)
                     }
 
                     // 如果移动距离足够大，判定为拖动
@@ -342,6 +345,7 @@ class FloatingBallService : LifecycleService() {
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     // 移除长按检测
                     handler.removeCallbacks(longPressRunnable)
+                    handler.removeCallbacks(notlongPressRunnable)
 
                     // 处理点击事件
                     if (currentGesture == null) {
@@ -402,7 +406,18 @@ class FloatingBallService : LifecycleService() {
         }
     }
 
+    private fun handlenotLongPress() {
+        if (currentBallStatus is BallStatus.Normal) {
+            if (isViewAdded(floatingTextView)) {
+                windowManager.removeView(floatingTextView)
+            }
+        }
+    }
+
     private fun showLongPressMenu() {
+        if (isViewAdded(floatingTextView)) {
+            windowManager.removeView(floatingTextView)
+        }
         val (dialog, listView) = Dialogs.menuDialog(applicationContext, isAutoTranslating)
         listView.onItemClickListener = object : AdapterView.OnItemClickListener {
             override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -577,6 +592,7 @@ class FloatingBallService : LifecycleService() {
                     return
                 }else{
                     if(!isViewAdded(floatingTextView)){
+                        floatingTextView.text = ""
                         windowManager.addView(floatingTextView, floatingTextViewParams)
 
                         // 保持悬浮球在最上层
@@ -781,6 +797,7 @@ class FloatingBallService : LifecycleService() {
             translatorText?.release()
             translatorPic?.release()
             handler.removeCallbacks(longPressRunnable)
+            handler.removeCallbacks(notlongPressRunnable)
             lifecycleScope.cancel()
 
             // 发送服务停止的广播
@@ -833,6 +850,7 @@ class FloatingBallService : LifecycleService() {
         translatorText?.release()
         translatorPic?.release()
         handler.removeCallbacks(longPressRunnable)
+        handler.removeCallbacks(notlongPressRunnable)
         lifecycleScope.cancel()
     }
 }
