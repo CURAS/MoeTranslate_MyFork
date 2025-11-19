@@ -53,14 +53,6 @@ config:
        icon: ♾️
        details: For advanced users, support custom API integration for enhanced flexibility
      -
-       title: Live 2D
-       icon: <img src="https://em-content.zobj.net/source/microsoft-3D-fluent/406/girl_1f467.png" width="30" height="30">
-       details: Built-in Live 2D SDK, supporting model import with automatic expression and motion parsing
-     -
-       title: Gemini Chat
-       icon: twemoji:speech-balloon
-       details: Integrated Gemini chat functionality with context awareness, just add your API key
-     -
        title: More Details
        icon: twemoji:glowing-star
        details: Customizable appearance, custom fonts, translation optimization... and more features waiting to be discovered

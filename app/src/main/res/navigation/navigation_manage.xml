@@ -27,15 +27,7 @@
         android:id="@+id/translate_fragment"
         android:name="com.moe.moetranslator.translate.TranslateFragment"
         android:label="fragment_translate"
-        tools:layout="@layout/fragment_translate" >
-    </fragment>
-
-    <fragment
-        android:id="@+id/gemini_fragment"
-        android:name="com.moe.moetranslator.geminiapi.ChatwithGemini"
-        android:label="fragment_chatwithgemini"
-        tools:layout="@layout/fragment_chatwithgemini" >
-    </fragment>
+        tools:layout="@layout/fragment_translate" />
 
     <fragment
         android:id="@+id/me_fragment"
